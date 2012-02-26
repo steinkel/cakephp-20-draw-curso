@@ -1,5 +1,5 @@
 <?php
-/* Ofertas Test cases generated on: 2012-02-26 18:03:04 : 1330275784*/
+/* Ofertas Test cases generated on: 2012-02-26 19:07:29 : 1330279649*/
 App::uses('OfertasController', 'Controller');
 
 /**
@@ -59,6 +59,51 @@ class OfertasControllerTestCase extends CakeTestCase {
 		unset($this->Ofertas);
 
 		parent::tearDown();
+	}
+
+/**
+ * testIndex method
+ *
+ * @return void
+ */
+	public function testIndex() {
+
+	}
+
+/**
+ * testView method
+ *
+ * @return void
+ */
+	public function testView() {
+
+	}
+
+/**
+ * testAdd method
+ *
+ * @return void
+ */
+	public function testAdd() {
+
+	}
+
+/**
+ * testEdit method
+ *
+ * @return void
+ */
+	public function testEdit() {
+
+	}
+
+/**
+ * testDelete method
+ *
+ * @return void
+ */
+	public function testDelete() {
+
 	}
 
 }
