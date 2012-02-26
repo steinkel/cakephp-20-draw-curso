@@ -112,4 +112,40 @@ class OfertasController extends AppController {
 		$this->set('ofertas', $ofertas);
 	}
 
+/**
+ * Ver ofertas por foco
+*/
+	public function foco($focoId = null) {
+		if ($this->request->is('post')){
+			// esta es una forma 'mala para el seo' de hacerlo
+			$foco = $this->Oferta->Foco->find('first', array('conditions' => array(
+				'Foco.nombre' => $this->request->data('Oferta.searchFoco')	
+			)));
+			if ($foco){
+				return $this->redirect('/ofertas/foco/' . $foco['Foco']['id']);
+			}
+
+		}
+		$ofertasDeFoco = array();
+		if ($focoId){
+			//usando el behavior Containable
+			$this->Oferta->Foco->Behaviors->attach('Containable');
+			$ofertasDeFoco = $this->Oferta->Foco->find('all', array(
+				'conditions' => array('Foco.id' => $focoId),
+				'contain' => array(
+					'Oferta' => array(
+						'Empresa',
+						'conditions' => array(
+							'activa' => '1',
+						),
+						'limit' => 10
+					)
+				)));
+			debug($ofertasDeFoco);
+			if (!empty($ofertasDeFoco)) {
+				$ofertasDeFoco = $ofertasDeFoco[0];
+			}
+		}
+		$this->set('ofertasDeFoco', $ofertasDeFoco);
+	}
 }
