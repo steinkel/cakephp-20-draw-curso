@@ -1,5 +1,5 @@
 <?php 
-/* generated on: 2012-02-26 17:50:46 : 1330275046 */
+/* generated on: 2012-02-26 18:18:23 : 1330276703 */
 class PracticasSchema extends CakeSchema {
 
 	public function before($event = array()) {
@@ -60,6 +60,7 @@ class PracticasSchema extends CakeSchema {
 		'modified' => array('type' => 'datetime', 'null' => false, 'default' => NULL, 'collate' => NULL, 'comment' => ''),
 		'vacantes' => array('type' => 'integer', 'null' => false, 'default' => NULL, 'length' => 3, 'collate' => NULL, 'comment' => ''),
 		'fecha_limite' => array('type' => 'date', 'null' => false, 'default' => NULL, 'collate' => NULL, 'comment' => ''),
+		'empresa_id' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 36, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'charset' => 'latin1'),
 		'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1)),
 		'tableParameters' => array('charset' => 'latin1', 'collate' => 'latin1_swedish_ci', 'engine' => 'InnoDB')
 	);
