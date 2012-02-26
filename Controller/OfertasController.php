@@ -99,4 +99,17 @@ class OfertasController extends AppController {
 		$this->Session->setFlash(__('Oferta was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
+
+/**
+ * Vemos las ofertas más recientes
+*/
+	public function recientes() {
+		$ofertas = $this->Oferta->find('all', array(
+    			'conditions' => array('activa' => '1'),
+    			'order' => array('Oferta.created DESC'),
+    			'limit' => 5 ));
+		debug($ofertas);
+		$this->set('ofertas', $ofertas);
+	}
+
 }
