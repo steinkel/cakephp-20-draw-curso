@@ -1,5 +1,5 @@
 <?php
-/* Alumno Fixture generated on: 2012-02-25 22:21:12 : 1330204872 */
+/* Alumno Fixture generated on: 2012-02-26 18:34:45 : 1330277685 */
 
 /**
  * AlumnoFixture
@@ -32,14 +32,14 @@ class AlumnoFixture extends CakeTestFixture {
  */
 	public $records = array(
 		array(
-			'id' => '4f4950c8-d788-4b27-bbca-30a97f000001',
+			'id' => '4f4a6d35-b9c0-47f7-ace0-117d7f000001',
 			'nombre' => 'Lorem ipsum dolor sit amet',
 			'primer_apellido' => 'Lorem ipsum dolor sit amet',
 			'segundo_apellido' => 'Lorem ipsum dolor sit amet',
 			'email' => 'Lorem ipsum dolor sit amet',
 			'telefono' => 'Lorem ipsum dolor sit amet',
-			'created' => '2012-02-25 22:21:12',
-			'modified' => '2012-02-25 22:21:12'
+			'created' => '2012-02-26 18:34:45',
+			'modified' => '2012-02-26 18:34:45'
 		),
 	);
 }
