@@ -1,5 +1,5 @@
 <?php
-/* Empresas Test cases generated on: 2012-02-25 22:27:34 : 1330205254*/
+/* Empresas Test cases generated on: 2012-02-26 18:03:41 : 1330275821*/
 App::uses('EmpresasController', 'Controller');
 
 /**
@@ -36,7 +36,7 @@ class EmpresasControllerTestCase extends CakeTestCase {
  *
  * @var array
  */
-	public $fixtures = array('app.empresa');
+	public $fixtures = array('app.empresa', 'app.oferta', 'app.foco', 'app.alumno', 'app.alumnos_foco', 'app.focos_oferta');
 
 /**
  * setUp method

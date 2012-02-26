@@ -1,5 +1,5 @@
 <?php
-/* Empresa Fixture generated on: 2012-02-25 22:27:22 : 1330205242 */
+/* Empresa Fixture generated on: 2012-02-26 18:03:36 : 1330275816 */
 
 /**
  * EmpresaFixture
@@ -31,13 +31,13 @@ class EmpresaFixture extends CakeTestFixture {
  */
 	public $records = array(
 		array(
-			'id' => '4f49523a-d1a8-40a2-be5d-31837f000001',
+			'id' => '4f4a65e8-86c4-4b04-94b4-0ee67f000001',
 			'nombre_social' => 'Lorem ipsum dolor sit amet',
 			'cif' => 'Lorem ipsum dolor sit amet',
 			'email' => 'Lorem ipsum dolor sit amet',
 			'direccion' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
-			'created' => '2012-02-25 22:27:22',
-			'modified' => '2012-02-25 22:27:22'
+			'created' => '2012-02-26 18:03:36',
+			'modified' => '2012-02-26 18:03:36'
 		),
 	);
 }

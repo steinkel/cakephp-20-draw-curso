@@ -16,5 +16,7 @@
 	<ul>
 
 		<li><?php echo $this->Html->link(__('List Empresas'), array('action' => 'index'));?></li>
+		<li><?php echo $this->Html->link(__('List Ofertas'), array('controller' => 'ofertas', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Oferta'), array('controller' => 'ofertas', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
