@@ -12,9 +12,4 @@ class AlumnosController extends AppController {
 * @var mixed
 */
     public $scaffold;
-	public $helper = array('Html');
-
-	public function index(){
-		$this->set('alumnos',$this->Alumno->find('all'));
-	}
 }

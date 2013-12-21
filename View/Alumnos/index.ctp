@@ -1,9 +1,8 @@
-<?php $this->layout = 'final'; ?>
 <div class="actions">
 	<h2>Acciones</h2>
 	<div class="button"><?php echo $this->Html->link(__('Crear Estudiante'),array('action'=>'add'));?></div>
-    <div class="button"><?php echo $this->Html->link(__('Lista de Focos'), array('controller' => 'focos', 'action' => 'index')); ?></div>
-    <div class="button"><?php echo $this->Html->link(__('New Foco'), array('controller' => 'focos', 'action' => 'add')); ?></div>
+    <div class="button"><?php echo $this->Html->link(__('Listar Focos'), array('controller' => 'focos', 'action' => 'index')); ?></div>
+    <div class="button"><?php echo $this->Html->link(__('Crear Foco'), array('controller' => 'focos', 'action' => 'add')); ?></div>
 </div>
 <div class="info">
 	<h2>Listado de Alumnos</h2>

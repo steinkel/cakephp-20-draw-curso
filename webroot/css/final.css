@@ -3,8 +3,42 @@ body{
 	font-family: Alegreya Sans;
 }
 
-h2,h3,h4,h5,h6{
+h3,legend{
 	color: rgb(13,67,81);
+	font-size: 20px;
+	font-weight: bold;
+}
+
+fieldset{
+	margin: 0 0 50px 0;
+}
+
+.input{
+	padding: 5px;
+	width: 300px;
+}
+
+.input > label{
+	margin: 0 15px 0 0;
+}
+
+.input > input{
+	height: 32px;
+	border: solid 1px rgb(52,52,52);
+	border-radius: 5px;
+	padding: 0 15px;
+	width: 90%;
+}
+
+.input > select{
+	border: solid 1px rgb(52,52,52);
+	border-radius: 5px;
+	padding: 0 15px;
+	width: 100%;
+}
+
+.submit{
+	margin: 0 0 50px 0;
 }
 
 #header{
@@ -40,15 +74,15 @@ h2,h3,h4,h5,h6{
 	overflow: auto;
 }
 
-.actions{
+.actions, ul{
 	float: left;
-	width: 18%;
-	border-right:solid 1px rgb(52,52,52);
+	width: 28%;
 }
 
-.actions > .button{
+.actions > .button, ul > li{
+	list-style: none;
 	float: left;
-	min-width: 50%;
+	min-width: 150px;
 	text-align: center;
 	background: rgb(222,222,222);
 	padding: 5px 10px;
@@ -58,27 +92,32 @@ h2,h3,h4,h5,h6{
 	box-shadow: 1px 1px 5px rgb(0,0,0);
 }
 
-.actions > .button:hover{
+.actions > .button:hover, ul > li:hover{
 	cursor: pointer;
 	box-shadow: 1px 1px 7px	rgb(13,67,81);
 }
 
-.actions > .button > a{
+.actions > .button > a, ul > li > a{
 	text-decoration: none;
 	color: rgb(52,52,52);
 }
 
-.info{
+.info, .form, .index, .view{
 	float: right;
-	width: 80%;
+	width: 70%;
 }
 
-.action_simply, .info > table > tbody > tr > th{
+.related{
+	clear: both;
+	margin: 50px 0;
+}
+
+table > tbody > tr > th{
 	text-transform: uppercase;
 	padding: 0 10px;
 }
 
-.info > table > tbody > tr > td{
+table > tbody > tr > td{
 	padding: 10px;
 	text-align: center;
 }
@@ -109,4 +148,71 @@ h2,h3,h4,h5,h6{
 	background: rgb(52,52,52);
 	color: rgb(255,255,255);
 	padding: 15px 5%;
+}
+
+/** Paging **/
+.paging {
+	background: #fff;
+	color: #ccc;
+	margin-top: 1em;
+	clear: both;
+}
+.paging .current,
+.paging .disabled,
+.paging a {
+	text-decoration: none;
+	padding: 5px 8px;
+	display: inline-block
+}
+.paging > span {
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-left: 0;
+}
+.paging > span:hover {
+	background: #efefef;
+}
+.paging .prev {
+	border-left: 1px solid #ccc;
+	-moz-border-radius: 4px 0 0 4px;
+	-webkit-border-radius: 4px 0 0 4px;
+	border-radius: 4px 0 0 4px;
+}
+.paging .next {
+	-moz-border-radius: 0 4px 4px 0;
+	-webkit-border-radius: 0 4px 4px 0;
+	border-radius: 0 4px 4px 0;
+}
+.paging .disabled {
+	color: #ddd;
+}
+.paging .disabled:hover {
+	background: transparent;
+}
+.paging .current {
+	background: #efefef;
+	color: #c73e14;
+}
+
+/** Scaffold View **/
+dl {
+	line-height: 2em;
+	margin: 0em 0em;
+	width: 60%;
+}
+dl dd:nth-child(4n+2),
+dl dt:nth-child(4n+1) {
+	background: #f4f4f4;
+}
+
+dt {
+	font-weight: bold;
+	padding-left: 4px;
+	vertical-align: top;
+	width: 10em;
+}
+dd {
+	margin-left: 10em;
+	margin-top: -2em;
+	vertical-align: top;
 }
