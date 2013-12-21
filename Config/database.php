@@ -4,7 +4,7 @@ class DATABASE_CONFIG {
 	public $default = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
-		'host' => 'mirror.dungeon',
+		'host' => 'localhost',
 		'login' => 'root',
 		'password' => '',
 		'database' => 'practicas',
