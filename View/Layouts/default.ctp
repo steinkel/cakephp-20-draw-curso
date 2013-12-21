@@ -31,11 +31,15 @@
 
 		echo $scripts_for_layout;
 	?>
+	<style type="text/css">
+        	body { background: green! important; }
+        	h1 { background: green!important; }
+	</style>
 </head>
-<body>
+<body style="background: green;">
 	<div id="container">
 		<div id="header">
-			<h1><?php echo $this->Html->link(__('CakePHP: the rapid development php framework'), 'http://cakephp.org'); ?></h1>
+			<h1>Curso de CakePHP</h1>
 		</div>
 		<div id="content">
 
