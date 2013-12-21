@@ -7,6 +7,10 @@ App::uses('AppController', 'Controller');
  */
 class OfertasController extends AppController {
 
+        public function recientes(){
+                $ofertas = $this->Oferta->find('all', array('conditions' => array ('activa' => 'true')));
+                $this-> set('ofertas', $ofertas);
+        }
 
 /**
  * index method
