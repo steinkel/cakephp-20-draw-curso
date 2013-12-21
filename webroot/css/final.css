@@ -1,0 +1,112 @@
+body{
+	margin: 0 auto;
+	font-family: Alegreya Sans;
+}
+
+h2,h3,h4,h5,h6{
+	color: rgb(13,67,81);
+}
+
+#header{
+	width: 90%;
+	height: 80px;
+	padding: 0 5%;
+	background: rgb(255,120,0);
+	color: rgb(255,255,255);
+}
+
+#header > div{
+	float: left;
+	padding: 0 10px;
+	height: 100%;
+	display: table;
+}
+
+#header > div > div{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#header > div > div > img{
+	height: 32px;
+}
+
+#content{
+	width: 90%;
+	background: rgb(255,255,255);
+	clear: both;
+	color: rgb(52,52,52);
+	padding: 20px 5%;
+	overflow: auto;
+}
+
+.actions{
+	float: left;
+	width: 18%;
+	border-right:solid 1px rgb(52,52,52);
+}
+
+.actions > .button{
+	float: left;
+	min-width: 50%;
+	text-align: center;
+	background: rgb(222,222,222);
+	padding: 5px 10px;
+	margin: 5px 0;
+	border:solid 1px rgb(200,200,200);
+	border-radius: 5px;
+	box-shadow: 1px 1px 5px rgb(0,0,0);
+}
+
+.actions > .button:hover{
+	cursor: pointer;
+	box-shadow: 1px 1px 7px	rgb(13,67,81);
+}
+
+.actions > .button > a{
+	text-decoration: none;
+	color: rgb(52,52,52);
+}
+
+.info{
+	float: right;
+	width: 80%;
+}
+
+.action_simply, .info > table > tbody > tr > th{
+	text-transform: uppercase;
+	padding: 0 10px;
+}
+
+.info > table > tbody > tr > td{
+	padding: 10px;
+	text-align: center;
+}
+
+.thumbs{
+	width: 24px;
+}
+
+#flashMessage{
+	position: absolute;
+	top: 25%;
+	left: 38%;
+	width: 22%;
+	padding: 2%;
+	box-shadow: 1px 1px 12px rgb(0,0,0);
+	border-radius: 15px;
+	background: rgb(255,120,0);
+	color: rgb(52,52,52);
+	font-size: 20px;
+	text-align: center;
+}
+
+#footer{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 95%;
+	background: rgb(52,52,52);
+	color: rgb(255,255,255);
+	padding: 15px 5%;
+}
