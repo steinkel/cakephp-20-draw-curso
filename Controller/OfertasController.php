@@ -7,6 +7,13 @@ App::uses('AppController', 'Controller');
  */
 class OfertasController extends AppController {
 
+/** 
+ * Función que devuelve las útlimas 5 ofertas activas
+**/
+        public function recientes(){
+                $ofertas = $this->Oferta->find('all', array('conditions' => array ('activa' => 'true'), 'limit' => 5));
+                $this-> set('ofertas', $ofertas);
+        }
 
 /**
  * index method
