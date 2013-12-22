@@ -50,8 +50,6 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('Crear Foco'),array('action'=>'add'));?></li>
-		<li><?php echo $this->Html->link(__('Listar Estudiantes'), array('controller' => 'alumnos', 'action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('Listar Empresas'), array('controller' => 'empresas', 'action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('Listar Ofertas'), array('controller' => 'ofertas', 'action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('Inicio'), array('controller' => 'pages', 'action' => 'index')); ?></li>
 	</ul>
 </div>

@@ -42,4 +42,40 @@ class FocosController extends AppController {
 		$ofertas = $this->Foco->Oferta->find('list');
 		$this->set(compact('foco','alumnos','ofertas'));
 	}
+
+	public function edit($id = null) {
+		$this->Foco->id = $id;
+		if (!$this->Foco->exists()) {
+			throw new NotFoundException(__('No existe el Foco'));
+		}
+		if ($this->request->is('post') || $this->request->is('put')) {
+			if ($this->Foco->save($this->request->data)) {
+				$this->Session->setFlash(__('El Foco ha sido guardado'));
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('Error al guardar'));
+			}
+		} else {
+			$foco = $this->Foco->read(null, $id);
+			$empresas = $this->Foco->Oferta->Empresa->find('list');
+			$alumnos = $this->Foco->Alumno->find('list');
+			$this->set(compact('foco','alumnos','empresas'));
+		}
+	}
+
+	public function delete($id = null) {
+		if (!$this->request->is('post')) {
+			throw new MethodNotAllowedException();
+		}
+		$this->Foco->id = $id;
+		if (!$this->Foco->exists()) {
+			throw new NotFoundException(__('No existe el Foco'));
+		}
+		if ($this->Foco->delete()) {
+			$this->Session->setFlash(__('Foco Eliminado'));
+			$this->redirect(array('action' => 'index'));
+		}
+		$this->Session->setFlash(__('No se ha podido Eliminar'));
+		$this->redirect(array('action' => 'index'));
+	}
 }
