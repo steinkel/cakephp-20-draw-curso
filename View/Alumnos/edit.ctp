@@ -1,4 +1,3 @@
-<?php $this->layout = 'final'; ?>
 <div class="alumnos form">
 <?php echo $this->Form->create('Alumno');?>
 	<fieldset>

@@ -1,6 +1,12 @@
 <div class="ofertas index">
 	<h2><?php echo __('Ofertas más recientes');?></h2>
 	<table cellpadding="0" cellspacing="0">
+	<tr>
+		<th>Titulo</th>
+		<th>Vacantes</th>
+		<th>Fecha Limite</th>
+		<th>Empresa</th>
+	</tr>
 	<?php
 	foreach ($ofertas as $oferta): ?>
 	<tr>
@@ -14,4 +20,12 @@
 <?php endforeach; ?>
 	</table>
 
+</div>
+<div class="actions">
+	<h3><?php echo __('Actions'); ?></h3>
+	<ul>
+		<li><?php echo $this->Html->link(__('New Oferta'), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('List Empresas'), array('controller' => 'empresas', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Empresa'), array('controller' => 'empresas', 'action' => 'add')); ?> </li>
+	</ul>
 </div>

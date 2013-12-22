@@ -56,5 +56,6 @@
 		<li><?php echo $this->Html->link(__('New Empresa'), array('controller' => 'empresas', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Focos'), array('controller' => 'focos', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Foco'), array('controller' => 'focos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Ofertas Recientes'), array('controller' => 'ofertas', 'action' => 'recientes')); ?> </li>
 	</ul>
 </div>
