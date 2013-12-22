@@ -1,3 +1,10 @@
+<div class="actions">
+	<h2>Acciones</h2>
+	<ul>
+		<li><?php echo $this->Html->link(__('Volver'), array('action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('Inicio'), array('controller' => 'pages', 'action' => 'index')); ?></li>
+	</ul>
+</div>
 <div class="ofertas index">
 	<h2><?php echo __('Ofertas más recientes');?></h2>
 	<table cellpadding="0" cellspacing="0">
@@ -20,12 +27,4 @@
 <?php endforeach; ?>
 	</table>
 
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Oferta'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Empresas'), array('controller' => 'empresas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Empresa'), array('controller' => 'empresas', 'action' => 'add')); ?> </li>
-	</ul>
 </div>

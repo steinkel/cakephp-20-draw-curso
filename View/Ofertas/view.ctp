@@ -1,4 +1,12 @@
-<div class="ofertas view">
+<div class="actions">
+	<h2>Acciones</h2>
+	<ul>
+		<li><?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $oferta['Oferta']['id'])); ?></li>
+		<li><?php echo $this->Html->link(__('Volver'), array('action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('Inicio'), array('controller' => 'pages', 'action' => 'index')); ?></li>
+	</ul>
+</div>
+<div class="info">
 <h2><?php  echo __('Oferta');?></h2>
 	<dl>
 		<dt><?php echo __('Id'); ?></dt>
@@ -43,47 +51,52 @@
 		</dd>
 	</dl>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Oferta'), array('action' => 'edit', $oferta['Oferta']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Oferta'), array('action' => 'delete', $oferta['Oferta']['id']), null, __('Are you sure you want to delete # %s?', $oferta['Oferta']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Ofertas'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Oferta'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Empresas'), array('controller' => 'empresas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Empresa'), array('controller' => 'empresas', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Focos'), array('controller' => 'focos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Foco'), array('controller' => 'focos', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
-<div class="related">
-	<h3><?php echo __('Related Focos');?></h3>
-	<?php if (!empty($oferta['Foco'])):?>
-	<table cellpadding = "0" cellspacing = "0">
-	<tr>
-		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Nombre'); ?></th>
-		<th class="actions"><?php echo __('Actions');?></th>
-	</tr>
-	<?php
-		$i = 0;
-		foreach ($oferta['Foco'] as $foco): ?>
-		<tr>
-			<td><?php echo $foco['id'];?></td>
-			<td><?php echo $foco['nombre'];?></td>
-			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'focos', 'action' => 'view', $foco['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'focos', 'action' => 'edit', $foco['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'focos', 'action' => 'delete', $foco['id']), null, __('Are you sure you want to delete # %s?', $foco['id'])); ?>
-			</td>
-		</tr>
-	<?php endforeach; ?>
-	</table>
-<?php endif; ?>
-
-	<div class="actions">
-		<ul>
-			<li><?php echo $this->Html->link(__('New Foco'), array('controller' => 'focos', 'action' => 'add'));?> </li>
-		</ul>
-	</div>
+<div class="info">
+<h2><?php  echo __('Focos relacionados');?></h2>
+	<table cellpadding="0" cellspacing="0">
+        <tr>
+            <th><?php echo __('id'); ?></th>
+            <th><?php echo __('nombre'); ?></th>
+            <th><td></td><th class="action_simply"><?php echo __('Acciones'); ?></th><td></td></th>
+        </tr>
+        <?php
+        foreach ($oferta['Foco'] as $foco): ?>
+        <tr>
+                <td><?php echo h($foco['id']); ?></td>
+                <td><?php echo h($foco['nombre']); ?></td>
+                <td>
+	                <td><?php
+	                	echo $this->Html->image("https://cdn1.iconfinder.com/data/icons/simplicio/128x128/file_search.png", array(
+						    "alt" => "Info",
+						    "class" => "thumbs",
+						    'url' => array('controller'=>'focos','action' => 'view', $foco['id']),
+						));
+	                ?></td>
+	                <td><?php
+	                	echo $this->Html->image("https://cdn1.iconfinder.com/data/icons/simplicio/128x128/file_edit.png", array(
+						    "alt" => "Edit",
+						    "class" => "thumbs",
+						    'url' => array('controller'=>'focos','action' => 'edit', $foco['id']),
+						));
+	                ?></td>
+	                <td><?php
+	                	
+	                	echo $this->Form->postLink(
+						    $this->Html->image(
+						    	"https://cdn1.iconfinder.com/data/icons/simplicio/128x128/file_delete.png",
+						    	array("alt" => "Eliminar","class"=>"thumbs")
+						    ),
+						    array(
+						    	'controller'=>'focos',
+								'action' => 'delete',
+								$foco['id']
+							),
+							array('escape' => false),
+							__('¿Realmente desea eliminar a: %s?', strtoupper($foco['nombre']))
+						);
+	                ?></td>
+                </td>
+        </tr>
+		<?php endforeach; ?>
+        </table>
 </div>

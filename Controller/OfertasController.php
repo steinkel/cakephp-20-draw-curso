@@ -27,7 +27,7 @@ class OfertasController extends AppController {
 	public function view($id = null) {
 		$this->Oferta->id = $id;
 		if (!$this->Oferta->exists()) {
-			throw new NotFoundException(__('Invalid oferta'));
+			throw new NotFoundException(__('No existe la Oferta'));
 		}
 		$this->set('oferta', $this->Oferta->read(null, $id));
 	}
@@ -41,10 +41,10 @@ class OfertasController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Oferta->create();
 			if ($this->Oferta->save($this->request->data)) {
-				$this->Session->setFlash(__('The oferta has been saved'));
+				$this->Session->setFlash(__('La Oferta ha sido guardada'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The oferta could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('Error al guardar'));
 			}
 		}
 		$empresas = $this->Oferta->Empresa->find('list');
@@ -61,14 +61,14 @@ class OfertasController extends AppController {
 	public function edit($id = null) {
 		$this->Oferta->id = $id;
 		if (!$this->Oferta->exists()) {
-			throw new NotFoundException(__('Invalid oferta'));
+			throw new NotFoundException(__('No existe la Oferta'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Oferta->save($this->request->data)) {
-				$this->Session->setFlash(__('The oferta has been saved'));
+				$this->Session->setFlash(__('La Oferta ha sido guardada'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The oferta could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('Error al guardar'));
 			}
 		} else {
 			$this->request->data = $this->Oferta->read(null, $id);
@@ -90,13 +90,13 @@ class OfertasController extends AppController {
 		}
 		$this->Oferta->id = $id;
 		if (!$this->Oferta->exists()) {
-			throw new NotFoundException(__('Invalid oferta'));
+			throw new NotFoundException(__('No existe la Oferta'));
 		}
 		if ($this->Oferta->delete()) {
-			$this->Session->setFlash(__('Oferta deleted'));
+			$this->Session->setFlash(__('Oferta Eliminada'));
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Oferta was not deleted'));
+		$this->Session->setFlash(__('No se ha podido Eliminar'));
 		$this->redirect(array('action' => 'index'));
 	}
 
@@ -106,7 +106,7 @@ class OfertasController extends AppController {
 	public function recientes() {
 		$ofertas = $this->Oferta->find('all', array(
     			'conditions' => array('activa' => '1'),
-    			'order' => array('Oferta.created DESC'),
+    			'order' => array('Oferta.fecha_limite ASC','Oferta.vacantes ASC'),
     			'limit' => 5 ));
 		$this->set('ofertas', $ofertas);
 	}
