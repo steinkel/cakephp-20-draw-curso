@@ -1,3 +1,10 @@
+<div class="actions">
+	<h2>Acciones</h2>
+	<ul>
+		<li><?php echo $this->Html->link(__('Volver'), array('action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('Inicio'), array('controller' => 'pages', 'action' => 'index')); ?></li>
+	</ul>
+</div>
 <div class="ofertas form">
 <?php echo $this->Form->create('Oferta');?>
 	<fieldset>
@@ -12,17 +19,5 @@
 		echo $this->Form->input('Foco');
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit'));?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Oferta.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('Oferta.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Ofertas'), array('action' => 'index'));?></li>
-		<li><?php echo $this->Html->link(__('List Empresas'), array('controller' => 'empresas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Empresa'), array('controller' => 'empresas', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Focos'), array('controller' => 'focos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Foco'), array('controller' => 'focos', 'action' => 'add')); ?> </li>
-	</ul>
+<?php echo $this->Form->end(__('Guardar'));?>
 </div>

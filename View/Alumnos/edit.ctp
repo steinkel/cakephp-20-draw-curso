@@ -1,7 +1,14 @@
-<div class="alumnos form">
+<div class="actions">
+	<h2>Acciones</h2>
+	<ul>
+		<li><?php echo $this->Html->link(__('Volver'), array('action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('Inicio'), array('controller' => 'pages', 'action' => 'index')); ?></li>
+	</ul>
+</div>
+<div class="info">
 <?php echo $this->Form->create('Alumno');?>
 	<fieldset>
-		<legend><?php echo __('Edit Alumno'); ?></legend>
+		<legend><?php echo __('Editar Alumno'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('nombre');
@@ -12,15 +19,5 @@
 		echo $this->Form->input('Foco');
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit'));?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Alumno.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('Alumno.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Alumnos'), array('action' => 'index'));?></li>
-		<li><?php echo $this->Html->link(__('List Focos'), array('controller' => 'focos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Foco'), array('controller' => 'focos', 'action' => 'add')); ?> </li>
-	</ul>
+<?php echo $this->Form->end(__('Guardar'));?>
 </div>
