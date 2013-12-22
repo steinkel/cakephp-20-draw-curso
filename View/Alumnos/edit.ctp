@@ -8,7 +8,7 @@
 <div class="info">
 <?php echo $this->Form->create('Alumno');?>
 	<fieldset>
-		<legend><?php echo __('Edit Alumno'); ?></legend>
+		<legend><?php echo __('Editar Alumno'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('nombre');
@@ -19,5 +19,5 @@
 		echo $this->Form->input('Foco');
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit'));?>
+<?php echo $this->Form->end(__('Guardar'));?>
 </div>
