@@ -57,6 +57,6 @@
 	<ul>
 		<li><?php echo $this->Html->link(__('Crear Estudiante'),array('action'=>'add'));?></li>
 		<li><?php echo $this->Html->link(__('Listar Focos'), array('controller' => 'focos', 'action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('Crear Foco'), array('controller' => 'focos', 'action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('Listar Ofertas'), array('controller' => 'ofertas', 'action' => 'index')); ?></li>
 	</ul>
 </div>

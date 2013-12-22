@@ -36,8 +36,13 @@ class AlumnosController extends AppController {
 		$this->set('focos', $this->Alumno->Foco->find('list'));
 	}
 
-    public function prueba(){
+    public function view($id = null) {
+		$this->Alumno->id = $id;
+		if (!$this->Alumno->exists()) {
+			throw new NotFoundException(__('No existe el Estudiante'));
+		}
+		$alumno = $this->Alumno->read(null, $id);
 		$focos = $this->Alumno->Foco->find('list');
-		$this->set('focos', $focos);
-    }
+		$this->set(compact('focos','alumno'));
+	}
 }
