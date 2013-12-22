@@ -49,14 +49,13 @@
 	                ?></td>
                 </td>
         </tr>
-<?php endforeach; ?>
-        </table>
+		<?php endforeach; ?>
+    </table>
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('Crear Estudiante'),array('action'=>'add'));?></li>
-		<li><?php echo $this->Html->link(__('Listar Focos'), array('controller' => 'focos', 'action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('Listar Ofertas'), array('controller' => 'ofertas', 'action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('Inicio'), array('controller' => 'pages', 'action' => 'index')); ?></li>
 	</ul>
 </div>

@@ -1,8 +1,10 @@
 <div class="actions">
 	<h2>Acciones</h2>
-	<div class="button"><?php echo $this->Html->link(__('Listar Estudiantes'), array('action' => 'index')); ?></div>
-	<div class="button"><?php echo $this->Html->link(__('Listar Focos'),array('controller'=>'focos','action'=>'index'));?></div>
-    <div class="button"><?php echo $this->Html->link(__('Listar Empresas'), array('controller'=>'empresas','action' => 'index')); ?></div>
+	<ul>
+		<li><?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $alumno['Alumno']['id'])); ?></li>
+		<li><?php echo $this->Html->link(__('Volver'), array('action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('Inicio'), array('controller' => 'pages', 'action' => 'index')); ?></li>
+	</ul>
 </div>
 <div class="info">
 <h2><?php  echo __('Alumno');?></h2>

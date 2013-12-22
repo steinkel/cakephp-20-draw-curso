@@ -17,6 +17,19 @@ class AlumnosController extends AppController {
     	$this->set('alumnos',$this->Alumno->find('all'));
     }
 
+    public function add(){
+    	if ($this->request->is('post')) {
+			$this->Alumno->create();
+			if ($this->Alumno->save($this->request->data)) {
+				$this->Session->setFlash(__('El Estudiante ha sido creado'));
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('Error al guardar'));
+			}
+		}
+		$this->set('focos',$this->Alumno->Foco->find('list'));
+    }
+
     public function edit($id = null) {
 		$this->Alumno->id = $id;
 		if (!$this->Alumno->exists()) {
@@ -28,7 +41,6 @@ class AlumnosController extends AppController {
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('Error al guardar'));
-				$this->redirect(array('action' => 'edit', $this->Alumno->id));
 			}
 		} else {
 			$this->request->data = $this->Alumno->read(null, $id);
