@@ -76,7 +76,7 @@ fieldset{
 
 .actions, ul{
 	float: left;
-	width: 28%;
+	width: 20%;
 }
 
 .actions > .button, ul > li{
@@ -104,7 +104,9 @@ fieldset{
 
 .info, .form, .index, .view{
 	float: right;
-	width: 70%;
+	width: 78%;
+	padding: 0 0 0 15px;
+	border-left:solid 1px rgb(255,120,0);
 }
 
 .related{

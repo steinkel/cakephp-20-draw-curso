@@ -17,20 +17,24 @@ class AlumnosController extends AppController {
     	$this->set('alumnos',$this->Alumno->find('all'));
     }
 
-    public function edit($id){
-    	$this->Alumno->id = $id;
-		if ($this->request->is('post')) {
+    public function edit($id = null) {
+		$this->Alumno->id = $id;
+		if (!$this->Alumno->exists()) {
+			throw new NotFoundException(__('No existe el Alumno'));
+		}
+		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Alumno->save($this->request->data)) {
 				$this->Session->setFlash(__('El estudiante ha sido guardado'));
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('Error al guardar'));
+				$this->redirect(array('action' => 'edit', $this->Alumno->id));
 			}
 		} else {
 			$this->request->data = $this->Alumno->read(null, $id);
 		}
 		$this->set('focos', $this->Alumno->Foco->find('list'));
-    }
+	}
 
     public function prueba(){
 		$focos = $this->Alumno->Foco->find('list');
