@@ -52,7 +52,7 @@ if (!defined('APP_DIR')) {
  * The following line differs from its sibling
  * /app/webroot/index.php
  */
-define('CAKE_CORE_INCLUDE_PATH',  DS . 'Cake' . DS . 'lib');
+define('CAKE_CORE_INCLUDE_PATH',  DS . 'opt' . DS . 'cakes' . DS . '2.0' . DS . 'lib');
 
 /**
  * Editing below this line should NOT be necessary.
