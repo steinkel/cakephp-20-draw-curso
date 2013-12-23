@@ -11,6 +11,8 @@ class Empresa extends AppModel {
  *
  * @var array
  */
+	public $displayField = 'nombre_social';
+
 	public $validate = array(
 		'nombre_social' => array(
 			'notempty' => array(

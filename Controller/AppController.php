@@ -30,5 +30,5 @@ App::uses('Controller', 'Controller');
  *
  * @package       app.Controller
  */
-class AppController extends Controller {
+class AppController extends Controller{
 }

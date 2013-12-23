@@ -1,35 +1,29 @@
 <div class="info">
-	<h2>Listado de Alumnos</h2>
+	<h2>Listado de Focos</h2>
 	<table cellpadding="0" cellspacing="0">
         <tr>
+                        <th><?php echo __('id'); ?></th>
                         <th><?php echo __('nombre'); ?></th>
-                        <th><?php echo __('primer apellido'); ?></th>
-                        <th><?php echo __('segundo apellido'); ?></th>
-                        <th><?php echo __('email'); ?></th>
-                        <th><?php echo __('teléfono'); ?></th>
                         <th><td></td><th class="action_simply"><?php echo __('Acciones'); ?></th><td></td></th>
         </tr>
         <?php
-        foreach ($alumnos as $alumno): ?>
+        foreach ($focos as $foco): ?>
         <tr>
-                <td><?php echo h($alumno['Alumno']['nombre']); ?></td>
-                <td><?php echo h($alumno['Alumno']['primer_apellido']); ?></td>
-                <td><?php echo h($alumno['Alumno']['segundo_apellido']); ?></td>
-                <td><?php echo h($alumno['Alumno']['email']); ?></td>
-                <td><?php echo h($alumno['Alumno']['telefono']); ?></td>
+                <td><?php echo h($foco['Foco']['id']); ?></td>
+                <td><?php echo h($foco['Foco']['nombre']); ?></td>
                 <td>
 	                <td><?php
 	                	echo $this->Html->image("https://cdn1.iconfinder.com/data/icons/simplicio/128x128/file_search.png", array(
 						    "alt" => "Info",
 						    "class" => "thumbs",
-						    'url' => array('action' => 'view', $alumno['Alumno']['id']),
+						    'url' => array('action' => 'view', $foco['Foco']['id']),
 						));
 	                ?></td>
 	                <td><?php
 	                	echo $this->Html->image("https://cdn1.iconfinder.com/data/icons/simplicio/128x128/file_edit.png", array(
 						    "alt" => "Edit",
 						    "class" => "thumbs",
-						    'url' => array('action' => 'edit', $alumno['Alumno']['id']),
+						    'url' => array('action' => 'edit', $foco['Foco']['id']),
 						));
 	                ?></td>
 	                <td><?php
@@ -41,10 +35,10 @@
 						    ),
 						    array(
 								'action' => 'delete',
-								$alumno['Alumno']['id']
+								$foco['Foco']['id']
 							),
 							array('escape' => false),
-							__('¿Realmente desea eliminar a: %s?', strtoupper($alumno['Alumno']['nombre']))
+							__('¿Realmente desea eliminar a: %s?', strtoupper($foco['Foco']['nombre']))
 						);
 	                ?></td>
                 </td>
@@ -55,7 +49,7 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Crear Estudiante'),array('action'=>'add'));?></li>
+		<li><?php echo $this->Html->link(__('Crear Foco'),array('action'=>'add'));?></li>
 		<li><?php echo $this->Html->link(__('Inicio'), array('controller' => 'pages', 'action' => 'index')); ?></li>
 	</ul>
 </div>

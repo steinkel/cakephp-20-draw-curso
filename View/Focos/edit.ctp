@@ -6,17 +6,13 @@
 	</ul>
 </div>
 <div class="info">
-<?php echo $this->Form->create('Alumno');?>
+<?php echo $this->Form->create('Foco');?>
 	<fieldset>
-		<legend><?php echo __('Editar Alumno'); ?></legend>
+		<legend><?php echo __('Editar Foco'); ?></legend>
 	<?php
-		echo $this->Form->input('id');
 		echo $this->Form->input('nombre');
-		echo $this->Form->input('primer_apellido');
-		echo $this->Form->input('segundo_apellido');
-		echo $this->Form->input('email');
-		echo $this->Form->input('telefono');
-		echo $this->Form->input('Foco');
+		echo $this->Form->input('Alumno');
+		echo $this->Form->input('Empresa',array('multiple'=>'multiple'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Guardar'));?>

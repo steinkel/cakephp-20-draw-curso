@@ -19,7 +19,7 @@
 	<div id="container">
 		<div id="header">
 			<div>
-				<div><?php echo $this->Html->image('images.png', array('alt' => 'Portal Empleo'))?></div>
+				<div><?php echo $this->Html->image('http://cake/img/images.png', array('alt' => 'Portal Empleo'))?></div>
 			</div>
 			<div>
 				<div><h1><?php echo __('Portal Empleo: '); echo $title_for_layout; ?></h1></div>

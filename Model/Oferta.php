@@ -12,6 +12,8 @@ class Oferta extends AppModel {
  *
  * @var array
  */
+	public $displayField = 'titulo';
+
 	public $validate = array(
 		'titulo' => array(
 			'notempty' => array(
